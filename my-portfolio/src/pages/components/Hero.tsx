@@ -35,11 +35,14 @@ export default function Hero() {
       </div>
 
       <div className="sm:w-1/2 flex justify-center mb-10 sm:mb-0">
-        <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-pink-500 shadow-lg">
+        <div className="relative w-72 h-72 rounded-full overflow-hidden border-4 border-pink-500 shadow-lg">
+          <div className="absolute inset-0 z-0">
+            <div className="w-full h-full rounded-full bg-gradient-to-tr from-pink-500/20 to-transparent scale-125"></div>
+          </div>
           <img
-            src="/profile.jpg"
+            src="/images/Profissional.png"
             alt="Jucelino Oliveira"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover relative z-10"
           />
         </div>
       </div>
