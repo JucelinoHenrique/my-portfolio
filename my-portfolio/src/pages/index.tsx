@@ -2,6 +2,7 @@ import Header from '../pages/components/Header'
 import Hero from '../pages/components/Hero'
 import Footer from '../pages/components/Footer'
 import TechStack from './components/TechStack'
+import Projects from './components/Projects'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <Hero />
       <TechStack/>
+      <Projects/>
       <Footer />
     </main>
   )

@@ -1,0 +1,78 @@
+import { FaGithub } from "react-icons/fa";
+import { useState } from "react";
+import ProjectModal from "./ProjectModal";
+
+export default function Projects() {
+  const [openModal, setOpenModal] = useState(false);
+
+  const projects = [
+    {
+      name: "TouchScreening",
+      description:
+        "Aplicativo para triagem de pacientes desenvolvido com Flutter e Firebase, voltado para unidades de saúde.",
+      tech: ["Flutter", "Firebase"],
+      github:
+        "https://github.com/JucelinoHenrique/touchscreening_fixed",
+      modal: true,
+    },
+    {
+      name: "Challenge-XII Backend",
+      description:
+        "API backend construída com Nest.js e TypeScript, integrando com um front-end React e seguindo padrão MVC.",
+      tech: ["Nest.js", "TypeScript", "React"],
+      github:
+        "https://github.com/JucelinoHenrique/Challenge-XII-back---Jucelino-henrique-",
+    },
+  ];
+
+  return (
+    <section id="projects" className="py-16 px-6 max-w-6xl mx-auto">
+      <h2 className="text-2xl font-bold mb-10 text-center">Projetos em Destaque</h2>
+      <div className="grid gap-10 md:grid-cols-2">
+        {projects.map((project, idx) => (
+          <div
+            key={idx}
+            className="bg-[#1e293b] p-6 rounded-xl border border-transparent hover:border-pink-500 transition duration-300 shadow-lg hover:shadow-pink-500/10"
+          >
+            <h3 className="text-2xl font-bold text-pink-500 mb-2">{project.name}</h3>
+            <p className="text-slate-300 mb-4 text-sm leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((stack, i) => (
+                <span
+                  key={i}
+                  className="bg-pink-500 text-white px-3 py-1 text-xs rounded-full font-medium shadow"
+                >
+                  {stack}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex gap-4">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-pink-400 hover:underline"
+              >
+                <FaGithub /> Ver no GitHub
+              </a>
+              {project.modal && (
+                <button
+                  onClick={() => setOpenModal(true)}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-white bg-pink-600 hover:bg-pink-700 px-3 py-1 rounded"
+                >
+                  Ver mais
+                </button>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <ProjectModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+    </section>
+  );
+}
