@@ -4,8 +4,8 @@ export default function Hero() {
   return (
     <section className="flex flex-col-reverse sm:flex-row items-center justify-between text-left py-20 px-6 max-w-6xl mx-auto">
       <div className="sm:w-1/2 text-center sm:text-left">
-        <p className="text-purple-500 text-sm uppercase font-medium tracking-wide mb-2">Hello.</p>
-        <h2 className="text-4xl sm:text-5xl font-bold mb-3">I'm Jucelino</h2>
+        <p className="text-purple-500 text-sm uppercase font-medium tracking-wide mb-2">Olá.</p>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-3">Eu sou Jucelino</h2>
         <h3 className="text-xl sm:text-2xl text-slate-400 font-medium mb-6">Full Stack Developer</h3>
 
         <div className="flex gap-4 justify-center sm:justify-start mb-6">
@@ -13,14 +13,14 @@ export default function Hero() {
             href="#contact"
             className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded shadow-md transition-colors"
           >
-            Got a project?
+            Tem um projeto?
           </a>
           <a
-            href="/curriculo.pdf"
+            href="/Currículo_Jucelino_Henrique.pdf"
             className="border border-slate-500 text-white font-semibold px-5 py-2 rounded hover:bg-slate-800 transition-colors"
             download
           >
-            My resume
+            Curriculo 
           </a>
         </div>
 

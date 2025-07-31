@@ -1,4 +1,3 @@
-// components/Contact.tsx
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function Contact() {
@@ -9,7 +8,6 @@ export default function Contact() {
         Se deseja entrar em contato comigo, utilize os canais abaixo. Estou disponível para oportunidades, colaborações e novos projetos. 🚀
       </p>
 
-      {/* Informações de contato diretas */}
       <div className="space-y-6 text-slate-300 text-lg">
         <p className="flex items-center justify-center gap-3">
           <FaEnvelope className="text-purple-500" />
@@ -24,8 +22,6 @@ export default function Contact() {
           </a>
         </p>
       </div>
-
-      {/* Links sociais */}
       <div className="flex justify-center gap-8 mt-10 text-3xl text-slate-400">
         <a href="https://github.com/JucelinoHenrique" target="_blank" className="hover:text-purple-500">
           <FaGithub />

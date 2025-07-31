@@ -62,7 +62,7 @@ const categories = [
 export default function TechStack() {
   return (
     <section className="py-12 px-6 max-w-6xl mx-auto text-center">
-      <h2 className="text-2xl font-bold mb-4">Skills & Technologies I Work With</h2>
+      <h2 className="text-2xl font-bold mb-4">Ferramentas & Tecnologias</h2>
       <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
         Aqui estão as principais tecnologias e ferramentas que utilizo para construir aplicações modernas, performáticas e bem estruturadas.
       </p>

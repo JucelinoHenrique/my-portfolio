@@ -4,9 +4,9 @@ export default function Header() {
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <h1 className="text-lg font-semibold tracking-tight">Jucelino Oliveira</h1>
         <nav className="space-x-6 text-sm font-medium">
-          <a href="#about" className="hover:text-purple-500 transition-colors">About</a>
-          <a href="#projects" className="hover:text-purple-500 transition-colors">Projects</a>
-          <a href="#contact" className="hover:text-purple-500 transition-colors">Contact</a>
+          <a href="#about" className="hover:text-purple-500 transition-colors">Sobre</a>
+          <a href="#projects" className="hover:text-purple-500 transition-colors">Projetos</a>
+          <a href="#contact" className="hover:text-purple-500 transition-colors">Contato</a>
         </nav>
       </div>
     </header>
