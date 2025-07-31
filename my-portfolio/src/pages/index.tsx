@@ -9,8 +9,8 @@ export default function Home() {
     <main className="bg-[#0f172a] text-white min-h-screen">
       <Header />
       <Hero />
-      <TechStack/>
       <Projects/>
+      <TechStack/>
       <Footer />
     </main>
   )
