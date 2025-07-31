@@ -9,7 +9,7 @@ export default function Projects() {
     {
       name: 'TouchScreening',
       description:
-        'Aplicativo para triagem de pacientes desenvolvido com Flutter e Firebase, voltado para unidades de saúde.',
+        'Aplicativo para triagem de pacientes desenvolvido com Flutter e Firebase, voltado para unidades de saúde. Desenvolvido como projeto integrador em parceria com O Instituto Federal de Educação, Ciência e Tecnologia do Pará - IFPA',
       tech: ['Flutter', 'Firebase'],
       github: 'https://github.com/JucelinoHenrique/touchscreening_fixed',
       modal: true,
@@ -17,8 +17,8 @@ export default function Projects() {
     {
       name: 'Challenge-XII Backend',
       description:
-        'API backend construída com Nest.js e TypeScript, integrando com um front-end React e seguindo padrão MVC.',
-      tech: ['Nest.js', 'TypeScript', 'React'],
+        'API backend construída com Nest.js e TypeScript, integrando com um front-end React e seguindo padrão MVC. Foi desenvolvida durante meu periodo de estagio na Compass Uol',
+      tech: ['Nest.js', 'TypeScript'],
       github:
         'https://github.com/JucelinoHenrique/Challenge-XII-back---Jucelino-henrique-',
     },
