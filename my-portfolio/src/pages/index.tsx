@@ -3,12 +3,14 @@ import Hero from '../pages/components/Hero'
 import Footer from '../pages/components/Footer'
 import TechStack from './components/TechStack'
 import Projects from './components/Projects'
+import About from './components/About'
 
 export default function Home() {
   return (
     <main className="bg-[#0f172a] text-white min-h-screen">
       <Header />
       <Hero />
+      <About/>
       <Projects/>
       <TechStack/>
       <Footer />
