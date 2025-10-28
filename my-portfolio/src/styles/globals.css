@@ -41,3 +41,34 @@ body {
     padding-right: 0.75rem;
   }
 }
+/* Hexagon-like mask (simple polygon) */
+.hexagon {
+  clip-path: polygon(
+    25% 6%,
+    75% 6%,
+    100% 50%,
+    75% 94%,
+    25% 94%,
+    0% 50%
+  );
+  border-radius: 22px;
+  background-color: #111827;
+}
+
+/* cursor animation like a terminal caret */
+@keyframes blinkCursor {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-cursor {
+  display: inline-block;
+  margin-left: 6px;
+  color: #10b981; /* green-ish */
+  animation: blinkCursor 1s steps(2, start) infinite;
+}
+
+/* pequena melhora responsiva */
+@media (max-width: 768px) {
+  .hexagon { width: 14rem; height: 14rem; }
+}
