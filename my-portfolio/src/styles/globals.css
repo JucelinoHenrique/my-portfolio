@@ -25,13 +25,36 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Header visual: barra com fundo escuro e borda verde */
+/* Header visual: barra com fundo escuro e border gradient */
 .header-bar {
-  background: #111111;
-  border-radius: 12px;
   position: relative;
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.7);
-  border: 1px solid #15503c;
+  border-radius: 12px;
+  background: #111111;
+  padding: 20px;
+}
+
+.header-bar::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  background: linear-gradient(
+    to top right,
+    #ad46ff 0%,
+    rgba(21, 80, 60, 0.8) 20%,
+    rgba(21, 80, 60, 0.2) 60%,
+    transparent 100%
+  );
+  border-radius: 13px;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* Pequenas melhorias mobile */
@@ -71,4 +94,26 @@ body {
 /* pequena melhora responsiva */
 @media (max-width: 768px) {
   .hexagon { width: 14rem; height: 14rem; }
+}
+
+/* Efeito de gradiente na borda inferior da imagem do hero */
+.border-gradient {
+  position: relative;
+}
+
+.border-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  /* A borda aumenta em opacidade da esquerda para a direita. */
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(21, 80, 60, 0.08) 30%,
+    rgba(21, 80, 60, 0.25) 60%,
+    rgba(21, 80, 60, 0.9) 100%
+  );
 }
