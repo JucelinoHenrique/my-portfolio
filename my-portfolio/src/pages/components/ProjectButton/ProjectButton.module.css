@@ -1,0 +1,75 @@
+.projectButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: #6b0713;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+}
+
+.buttonText {
+  position: relative;
+  z-index: 1;
+}
+
+.buttonIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  color: white;
+  animation: ripple 1.2s linear infinite;
+}
+
+.projectButton:hover .buttonIcon {
+  animation-play-state: running;
+}
+
+.buttonGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, center) var(--mouse-y, center),
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projectButton:hover .buttonGlow {
+  opacity: 1;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(255, 162, 162, 0.2),
+      0 0 0 12px rgba(255, 255, 255, 0.15),
+      0 0 0 24px rgba(255, 255, 255, .1);
+  }
+  100% {
+    box-shadow:
+      0 0 0 12px rgba(255, 255, 255, .15),
+      0 0 0 24px rgba(255, 255, 255, .1),
+      0 0 0 36px rgba(255, 255, 255, 0);
+  }
+}

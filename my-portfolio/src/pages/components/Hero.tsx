@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaLaptopCode } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import ProjectButton from "./ProjectButton/index";
 import React, { useEffect, useRef, useState } from "react";
 
 type Props = {
@@ -87,10 +88,7 @@ export default function Hero() {
           </p>
 
           <div className="flex gap-4">
-            <button className="btn-project" aria-label="Tem um projeto?">
-              <span>Tem um projeto?</span>
-              <FaLaptopCode className="project-icon" size={18} aria-hidden="true" />
-            </button>
+            <ProjectButton />
           </div>
         </div>
       </div>
