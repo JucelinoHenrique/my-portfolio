@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import React, { useEffect, useRef, useState, useId } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type Props = {
   text: string;
@@ -53,70 +53,14 @@ function TypeWriter({ text, speed = 40, onDone }: Props) {
 }
 
 export default function Hero() {
-  const _id = useId();
-  const clipId = `clip-${_id}`;
-  // build a rounded pentagon path dynamically so corners are smooth
-  const pentagonPath = (() => {
-    const cx = 100;
-    const cy = 100;
-    const radius = 90;
-    const cornerRadius = 12;
-    const t = cornerRadius / radius; // fraction along each edge to start/end the corner
-
-    const pts = Array.from({ length: 5 }).map((_, i) => {
-      const ang = ((-90 + i * 72) * Math.PI) / 180;
-      return { x: cx + radius * Math.cos(ang), y: cy + radius * Math.sin(ang) };
-    });
-
-    const starts = pts.map((p, i) => {
-      const prev = pts[(i + pts.length - 1) % pts.length];
-      return { x: p.x + (prev.x - p.x) * t, y: p.y + (prev.y - p.y) * t };
-    });
-
-    const ends = pts.map((p, i) => {
-      const next = pts[(i + 1) % pts.length];
-      return { x: p.x + (next.x - p.x) * t, y: p.y + (next.y - p.y) * t };
-    });
-
-    let d = `M ${starts[0].x} ${starts[0].y}`;
-    for (let i = 0; i < pts.length; i++) {
-      d += ` Q ${pts[i].x} ${pts[i].y} ${ends[i].x} ${ends[i].y}`;
-      const next = (i + 1) % pts.length;
-      d += ` L ${starts[next].x} ${starts[next].y}`;
-    }
-    d += " Z";
-    return d;
-  })();
 
   return (
-    <section className="bg-[#111111] text-white min-h-[520px] flex items-center mt-7 py-20 px-6">
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <div className="flex justify-center md:justify-start">
+    <section className="bg-[#111111] text-white min-h-[520px] flex items-center mt-7 py-20 px-6 ">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center ">
+        <div className="flex justify-center md:justify-start ">
           <div className="relative">
-            <div className="relative flex-none w-[420px] h-[420px] overflow-hidden">
-              <svg
-                className="w-full h-full shadow-2xl block"
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden
-                role="img"
-              >
-                <defs>
-                  <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
-                    <path d={pentagonPath} />
-                  </clipPath>
-                </defs>
-                <image
-                  href="/images/Profissional.png"
-                  x="0"
-                  y="0"
-                  width="200"
-                  height="200"
-                  preserveAspectRatio="xMidYMid slice"
-                  clipPath={`url(#${clipId})`}
-                />
-              </svg>
-              {/* badge */}
+            <div className="relative flex-none w-[420px] h-[420px] overflow-hidden rounded-2xl shadow-2xl">
+              <img src="/images/Profissional.png" alt="Jucelino" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
