@@ -55,7 +55,7 @@ function TypeWriter({ text, speed = 40, onDone }: Props) {
 export default function Hero() {
 
   return (
-    <section className="bg-[#111111] text-white min-h-[520px] flex items-center mt-7 py-20 px-6 ">
+    <section className="bg-[#111111] text-white min-h-[520px] flex items-center mt-7 py-20 px-6 border-gradient">
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center ">
         <div className="flex justify-center md:justify-start ">
           <div className="relative">
