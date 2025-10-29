@@ -1,11 +1,11 @@
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Header() {
-  const ACCENT_COLOR = "text-[#15503c]";
-  const HOVER_COLOR = "hover:text-[#15503c]";
+  const ACCENT_COLOR = "text-[#62040e]";
+  const HOVER_COLOR = "hover:text-[#62040e]";
 
   return (
-    <header className="w-full px-6 py-4 sticky top-4 z-50">
+    <header className="w-full px-6 py-8 top-5 z-50">
       <div className="max-w-6xl mx-auto">
         <div className="header-bar">
           <div className="header-bar-content flex items-center justify-between">
