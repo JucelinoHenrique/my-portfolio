@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaLaptopCode } from "react-icons/fa";
 import React, { useEffect, useRef, useState } from "react";
 
 type Props = {
@@ -59,19 +59,19 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center ">
         <div className="flex justify-center md:justify-start ">
           <div className="relative">
-            <div className="relative flex-none w-[420px] h-[420px] overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative flex-none w-[420px] h-[420px] overflow-hidden rounded-2xl shadow-2xl image-container">
               <img src="/images/Profissional.png" alt="Jucelino" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
 
         <div className="text-left">
-          <p className="text-sm text-pink-400 mb-2 font-medium tracking-wide">
+          <p className="text-sm text-red-400 mb-2 font-medium tracking-wide">
             &lt;span&gt; Hey, I&apos;m Jucelino &lt;/span&gt;
           </p>
 
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-            <span className="block font-mono text-green-400">
+            <span className="block font-mono text-green-500">
               {"{"}
               <TypeWriter text="Full Stack" />
               {" }"}{" "}
@@ -87,12 +87,10 @@ export default function Hero() {
           </p>
 
           <div className="flex gap-4">
-            <a
-              href="#contact"
-              className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
-            >
-              Tem um projeto?
-            </a>
+            <button className="btn-project" aria-label="Tem um projeto?">
+              <span>Tem um projeto?</span>
+              <FaLaptopCode className="project-icon" size={18} aria-hidden="true" />
+            </button>
           </div>
         </div>
       </div>
