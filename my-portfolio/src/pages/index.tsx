@@ -5,12 +5,14 @@ import TechStack from './components/TechStack'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
+import MySkills from './components/myskills'
 
 export default function Home() {
   return (
     <main className="bg-[#161616] text-white min-h-screen">
       <Header />
       <Hero />
+      <MySkills/>
       <About/>
       <Projects/>
       <TechStack/>
