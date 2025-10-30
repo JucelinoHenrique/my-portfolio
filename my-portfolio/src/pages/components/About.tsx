@@ -1,52 +1,66 @@
-// components/About.tsx
-import { FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import { FaFlask, FaGraduationCap } from "react-icons/fa"
+import TimeLineCard from "./TimelineCard/timeLineCard"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-purple-500 mb-12">
-        Sobre mim
-      </h2>
+    <main className="min-h-screen bg-[#161616] flex justify-center py-16 px-4">
+      <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="bg-[#111111] p-6 rounded-2xl shadow-lg border border-teal-800">
+          <div className="flex items-center gap-2 mb-4">
+            <FaGraduationCap className="text-green-400 text-xl" />
+            <h2 className="text-lg font-bold text-gray-100">Educação</h2>
+          </div>
 
-      <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto text-center mb-12">
-        Sou um desenvolvedor <span className="text-purple-400 font-semibold">Full Stack</span> em formação, apaixonado por tecnologia e por transformar ideias em soluções digitais. 
-        Minha jornada começou na graduação em <span className="text-purple-400">Ciência da Computação</span>, onde participei de projetos acadêmicos impactantes, 
-        e se fortaleceu com experiências profissionais em empresas de tecnologia e projetos freelancers.
-      </p>
+          <div className="flex flex-col gap-6">
+            <TimeLineCard
+              year="2023–2027"
+              title="IFPA - Instituto Federal do Pará"
+              institution="Bacharelado em Ciência da Computação"
+              description=""
+            />
+            <TimeLineCard
+              year="2025"
+              title="XVII SICTI - Seminário de Iniciação Científica"
+              institution="1° Lugar em trabalhos acadêmicos"
+              description="Apresentação do aplicativo 'TouchScreening' uma solução tecnológica para triagem de pacientes em unidades de saúde."
+            />
+            <TimeLineCard
+              year="2017–2021"
+              title="IFPA - Instituto Federal do Pará"
+              institution="Ensino Médio Integrado em Edificações"
+              description=""
+            />
+          </div>
+        </section>
+        <section className="bg-[#111111] p-6 rounded-2xl shadow-lg border border-teal-800">
+          <div className="flex items-center gap-2 mb-4">
+            <FaFlask className="text-green-400 text-xl" />
+            <h2 className="text-lg font-bold text-gray-100">Pesquisa e Certificações</h2>
+          </div>
 
-      <div className="grid md:grid-cols-2 gap-10">
-        <div className="bg-[#1e293b] p-8 rounded-xl shadow hover:shadow-purple-500/10 transition">
-          <h3 className="flex items-center gap-2 text-xl font-semibold text-purple-400 mb-4">
-            <FaGraduationCap /> Formação Acadêmica
-          </h3>
-          <p className="text-slate-300 text-base leading-relaxed mb-3">
-            🎓 IFPA - Bacharelado em <strong>Ciência da Computação</strong> (em andamento).  
-          </p>
-          <p className="text-slate-300 text-base leading-relaxed">
-            📱 <strong>Projeto TouchScreening</strong> – Aplicativo acadêmico em Flutter + Firebase para triagem de pacientes em unidades de saúde, 
-            com telas de cadastro, anamnese e relatórios finais. Projeto voltado a impacto social e inovação em saúde.
-          </p>
-        </div>
-
-        <div className="bg-[#1e293b] p-8 rounded-xl shadow hover:shadow-purple-500/10 transition">
-          <h3 className="flex items-center gap-2 text-xl font-semibold text-purple-400 mb-4">
-            <FaBriefcase /> Experiência Profissional
-          </h3>
-          <p className="text-slate-300 text-base leading-relaxed mb-3">
-            💼 <strong>Compass UOL</strong> – Estagiário e Trainee Full Stack.  
-            Atuação em times ágeis, utilizando <span className="text-purple-400">React, TypeScript, Node.js, Docker, SQL e AWS</span>, com contribuições em projetos da Livelo.
-          </p>
-          <p className="text-slate-300 text-base leading-relaxed mb-3">
-            🖥️ <strong>CompuServe LTDA</strong> – Suporte Técnico (Dez/2022 – Fev/2024).<br />
-            Atendimento ao cliente e manutenção de sistemas comerciais, resolução de problemas em produção e automação de rotinas
-            com <span className="text-purple-400">SQL e Python</span>.
-          </p>
-          <p className="text-slate-300 text-base leading-relaxed">
-            🌐 <strong>Freelancer – Eklem Edits Website</strong> – Desenvolvimento de site landpage para a empresa Eklem Edits, 
-            utilizando <span className="text-purple-400">Nuxt 3, Vuetify e Vercel</span>, com foco em performance e design moderno.
-          </p>
-        </div>
+          <div className="flex flex-col gap-6">
+            <TimeLineCard
+              year="Jul/2024- Dez/2024"
+              title="PIBIC - Programa Institucional de Bolsas de Iniciação Científica"
+              institution="IFPA - Instituto Federal do Pará"
+              description="TOUCH SCREENING: APLICAÇÃO MOBILE
+                            DE SUPORTE À TRIAGEM NA UPA DE TUCURUÍ"
+            />
+            <TimeLineCard
+              year="Jul/2025"
+              title="Certificate 53/100 (B2 Upper Intermediate)"
+              institution="EF SET English "
+              description="Certificado de proficiência em inglês. Leitura, escrita, compreensão auditiva e expressão oral."
+            />
+            <TimeLineCard
+              year="Nov/2022"
+              title="Algoritmos e logica de programação"
+              institution="DevMedia"
+              description="Algoritmo e logica de programação com python"
+            />
+          </div>
+        </section>
       </div>
-    </section>
-  );
+    </main>
+  )
 }
