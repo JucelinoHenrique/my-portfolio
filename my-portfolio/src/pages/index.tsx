@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
 import MySkills from './components/myskills'
+import ServicosSection from './components/ServicesSection'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <Hero />
       <MySkills/>
+      <ServicosSection/>
       <About/>
       <Projects/>
       <TechStack/>
