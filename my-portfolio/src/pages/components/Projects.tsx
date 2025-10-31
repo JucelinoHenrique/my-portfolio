@@ -94,7 +94,7 @@ export default function ProjectsSection() {
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const [imgErrored, setImgErrored] = useState(false)
 
-  // "Test cases" simples em runtime
+  
   useEffect(() => {
     validateProjects(projects)
   }, [projects])
@@ -138,7 +138,7 @@ export default function ProjectsSection() {
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div className="relative">
-          <div className="overflow-hidden rounded-xl border border-red-500/20 bg-slate-900/60 shadow-inner">
+          <div className="overflow-hidden rounded-xl border border-emerald-500/20 bg-slate-900/60 shadow-inner">
             <Image
               priority
               key={imgSrc}
@@ -151,7 +151,7 @@ export default function ProjectsSection() {
             />
           </div>
           {imgErrored || imgSrc === PLACEHOLDER_SVG ? (
-            <div className="mt-2 flex items-center gap-2 text-xs text-red-300">
+            <div className="mt-2 flex items-center gap-2 text-xs text-emerald-300">
               <FiAlertCircle className="h-4 w-4" />
               <span>
                 Imagem não encontrada. Coloque um arquivo em <code>/public/projects</code> e
@@ -166,7 +166,7 @@ export default function ProjectsSection() {
                   key={p.id}
                   aria-label={`Ir para projeto ${i + 1}`}
                   className={`h-2 w-8 rounded-full transition-all ${
-                    i === index ? 'bg-red-400' : 'bg-slate-600'
+                    i === index ? 'bg-emerald-400' : 'bg-slate-600'
                   }`}
                   onClick={(e) => {
                     e.stopPropagation()
@@ -178,7 +178,7 @@ export default function ProjectsSection() {
             </div>
             <div className="flex items-center gap-2">
               <button
-                className="rounded-lg border border-slate-700 p-2 text-red-300 hover:bg-slate-800"
+                className="rounded-lg border border-slate-700 p-2 text-emerald-300 hover:bg-slate-800"
                 onClick={(e) => {
                   e.stopPropagation()
                   setIndex((i) => (i - 1 + projects.length) % projects.length)
@@ -189,7 +189,7 @@ export default function ProjectsSection() {
                 <FiChevronLeft />
               </button>
               <button
-                className="rounded-lg border border-slate-700 p-2 text-red-300 hover:bg-slate-800"
+                className="rounded-lg border border-slate-700 p-2 text-emerald-300  hover:bg-slate-800"
                 onClick={(e) => {
                   e.stopPropagation()
                   setIndex((i) => (i + 1) % projects.length)
@@ -200,7 +200,7 @@ export default function ProjectsSection() {
                 <FiChevronRight />
               </button>
               <button
-                className="rounded-lg border border-red-300 p-2 text-red-300 hover:bg-red-600/10"
+                className="rounded-lg border border-emerald-300 p-2 text-emerald-300 hover:bg-emerald-600/10"
                 onClick={(e) => {
                   e.stopPropagation()
                   setPaused((p) => !p)
