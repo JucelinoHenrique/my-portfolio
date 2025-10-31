@@ -19,16 +19,13 @@ export default function Header() {
             </h1>
 
             <nav className="hidden sm:flex space-x-6 text-sm font-medium absolute left-1/2 transform -translate-x-1/2">
-              <a href="#about" className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
-                Sobre
-              </a>
               <a href="#projects"  className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
                 Projetos
               </a>
-              <a href="/Currículo_Jucelino_Henrique.pdf" target="_blank" rel="noopener noreferrer" className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
+              <a href="/Currículo_Jucelino_Henrique.pdf" target="_blank" rel="noopener noreferrer" className={`text-slate-300 cursor-pointer ${HOVER_COLOR} transition-colors`}>
                 Currículo
               </a>
-              <a href="#contact" onClick={() => setIsOpen(true)}  className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
+              <a onClick={() => setIsOpen(true)}  className={`text-slate-300 ${HOVER_COLOR} cursor-pointer transition-colors`}>
                 Contato
               </a>
             </nav>

@@ -12,9 +12,6 @@ import {
   FiZap,
 } from 'react-icons/fi'
 
-// Componente de seção de serviços para portfólio júnior/em crescimento
-// Uso: coloque este arquivo em `components/ServicosSection.tsx` e importe onde quiser.
-// Ex: `import ServicosSection from '@/components/ServicosSection'`
 
 interface Service {
   title: string
@@ -67,13 +64,11 @@ export default function ServicosSection() {
       aria-labelledby="servicos-title"
       className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"
     >
-      {/* Fundo sutil quadriculado */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.08)_1px,transparent_1px)] [background-size:32px_32px]"
       />
 
-      {/* Heading */}
       <div className="mx-auto max-w-3xl text-center">
         <p className="mb-2 text-sm font-medium tracking-wide text-[#00c951]">
           O que eu ofereço
@@ -89,7 +84,6 @@ export default function ServicosSection() {
         </p>
       </div>
 
-      {/* Grid de cartões */}
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((svc) => (
           <article

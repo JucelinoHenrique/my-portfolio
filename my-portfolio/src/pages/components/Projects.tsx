@@ -20,7 +20,6 @@ export type Project = {
   client?: string
   duration?: string
   stack: string[]
-  /** Public path under /public. Ex: "/projects/sample-1.jpg" */
   image: string
   liveUrl?: string
   repoUrl?: string
@@ -37,7 +36,6 @@ const PLACEHOLDER_SVG = `data:image/svg+xml;utf8,
 
 function sanitizeImagePath(path?: string): string {
   if (!path || typeof path !== 'string') return PLACEHOLDER_SVG
-  // next/image exige caminho válido (em /public) quando usando string local
   const isLocal = path.startsWith('/')
   return isLocal ? path : PLACEHOLDER_SVG
 }
@@ -119,8 +117,9 @@ export default function ProjectsSection() {
 
   return (
     <section
+      id='projects'
       aria-labelledby="projects-title"
-      className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"
+      className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 scroll-smooth"
       onClick={handleUserInteraction}
       onKeyDown={handleUserInteraction}
     >

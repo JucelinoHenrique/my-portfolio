@@ -10,7 +10,7 @@ import ServicosSection from './components/ServicesSection'
 
 export default function Home() {
   return (
-    <main className="bg-[#161616] text-white min-h-screen">
+    <main className="bg-[#161616] text-white min-h-screen scroll-smooth">
       <Header />
       <Hero />
       <MySkills/>
