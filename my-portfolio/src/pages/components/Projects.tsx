@@ -213,8 +213,8 @@ export default function ProjectsSection() {
             </div>
           </div>
         </div>
-        <article className="rounded-xl border border-slate-500/20 bg-slate-900/60 p-6">
-          <h3 className="text-2xl font-semibold text-green-300">{current.title}</h3>
+        <article className="rounded-xl border border-slate-500/20 bg-[#111111] p-6">
+          <h3 className="text-2xl font-semibold text-white-300">{current.title}</h3>
           {current.subtitle && (
             <p className="mt-1 text-lg text-slate-300">{current.subtitle}</p>
           )}
