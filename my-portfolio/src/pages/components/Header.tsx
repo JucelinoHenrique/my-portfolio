@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import ContactModal from './ProjectButton/ContactModal';
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
   const ACCENT_COLOR = "text-[#62040e]";
   const HOVER_COLOR = "hover:text-[#62040e]";
 
@@ -19,13 +22,13 @@ export default function Header() {
               <a href="#about" className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
                 Sobre
               </a>
-              <a href="#projects" className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
+              <a href="#projects"  className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
                 Projetos
               </a>
               <a href="/Currículo_Jucelino_Henrique.pdf" target="_blank" rel="noopener noreferrer" className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
                 Currículo
               </a>
-              <a href="#contact" className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
+              <a href="#contact" onClick={() => setIsOpen(true)}  className={`text-slate-300 ${HOVER_COLOR} transition-colors`}>
                 Contato
               </a>
             </nav>
@@ -44,6 +47,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+      <ContactModal isOpen={isOpen} onClose={()=> setIsOpen(false)}/>
     </header>
   )
 }
