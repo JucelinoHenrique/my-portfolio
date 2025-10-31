@@ -1,35 +1,87 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+'use client';
 
-export default function Contact() {
+import Link from 'next/link';
+import { useState } from 'react';
+import { IconType } from 'react-icons';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import ContactModal from './ProjectButton/ContactModal';
+
+type Social = {
+  label: string;
+  href: string;
+  Icon: IconType;
+};
+
+const socials: Social[] = [
+  { label: 'Instagram', href: 'https://www.instagram.com/juce.17', Icon: FaInstagram },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jucelino-oliveira-4109a9229/', Icon: FaLinkedin },
+  { label: 'Github', href: 'https://github.com/JucelinoHenrique', Icon: FaGithub }
+];
+
+const nav = [
+  { label: 'About Me', href: '#about' },
+  { label: 'Resume', href: '/resume' },
+  { label: 'Contacts', href: '#contact' },
+];
+
+export default function Footer() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <section id="contact" className="py-20 px-6 max-w-4xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-6 text-purple-500">Contato</h2>
-      <p className="text-slate-300 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">
-        Se deseja entrar em contato comigo, utilize os canais abaixo. Estou disponível para oportunidades, colaborações e novos projetos. 🚀
-      </p>
+    <footer className="w-full border-t border-white/5 bg-[#0f0f0f]">
+      <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-neutral-300">
+        {/* Marca */}
+        <div className="flex items-center justify-center gap-3">
+          <h1 className="text-xl font-bold tracking-tight text-white flex items-center">
+            <span className={'text-[#62040e] text-2xl'}>&lt;</span>
+            Jucelino<span className="text-white">.Dev</span>
+            <span className={'text-[#62040e] text-2xl'}>/&gt;</span>
+          </h1>
+        </div>
 
-      <div className="space-y-6 text-slate-300 text-lg">
-        <p className="flex items-center justify-center gap-3">
-          <FaEnvelope className="text-purple-500" />
-          <a href="mailto:seuemail@gmail.com" className="hover:text-purple-400 transition">
-            jucelino.oliveira2002@gmail.com
-          </a>
-        </p>
-        <p className="flex items-center justify-center gap-3">
-          <FaPhone className="text-purple-500" />
-          <a href="tel:+5594992979826" className="hover:text-purple-400 transition">
-            +55 (94) 992979826
-          </a>
-        </p>
+        {/* Socials (ícones 40x40, redondos e simétricos) */}
+        <div className="mt-6 flex items-center justify-center gap-4">
+          {socials.map(({ href, label, Icon }) => (
+            <Link
+              key={label}
+              href={href}
+              aria-label={label}
+              className="grid h-10 w-10 place-items-center rounded-full ring-1 ring-white/10 transition
+                         hover:ring-brandGreen/60 focus:outline-none focus:ring-2 focus:ring-brandGreen/80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon className="h-5 w-5 text-neutral-200 transition group-hover:scale-110" />
+            </Link>
+          ))}
+        </div>
+
+        {/* Navegação */}
+        <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <button
+            type="button"
+
+            className="inline-flex items-center justify-center rounded-lg bg-[#6b0713] px-5 py-2.5 text-white text-sm font-medium shadow-sm
+         hover:bg-[#6b0713]/90 hover:shadow-md
+         focus:outline-none focus:ring-4 focus:ring-[#6b0713]/30
+         active:translate-y-px transition"
+          >
+            <a href="/Currículo_Jucelino_Henrique.pdf" target="_blank" rel="noopener noreferrer" >Baixar Currículo</a>      
+          </button>
+
+          <button
+             onClick={() => setIsOpen(true) }
+            type="button"
+            className="inline-flex items-center justify-center rounded-lg border border-[#6b0713] px-5 py-2.5 text-white text-sm font-medium
+         hover:bg-[#6b0713]/10
+         focus:outline-none focus:ring-4 focus:ring-[#6b0713]/20
+         active:translate-y-px transition"
+          >
+            Entrar em contato
+          </button>
+        </nav>
       </div>
-      <div className="flex justify-center gap-8 mt-10 text-3xl text-slate-400">
-        <a href="https://github.com/JucelinoHenrique" target="_blank" className="hover:text-purple-500">
-          <FaGithub />
-        </a>
-        <a href="https://www.linkedin.com/in/jucelino-oliveira-4109a9229/" target="_blank" className="hover:text-purple-500">
-          <FaLinkedin />
-        </a>
-      </div>
-    </section>
+      <ContactModal isOpen={isOpen} onClose={()=> setIsOpen(false)}/>
+    </footer>
   );
 }
